@@ -2,12 +2,15 @@ import React from 'react';
 import './App.css'
 import {Counter} from './Counter';
 
-function App(){
-    return(
-        <div className={'wrapper'}>
-            <Counter maxNumber={5} minNumber={0} />
+function App() {
+   return(
+       <div>
+           <Counter/>
+       </div>
+   )
 
-        </div>
-    )
+
 }
+
+
 export default App;

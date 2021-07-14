@@ -1,31 +1,72 @@
-import React, {useState} from 'react';
-import {Window} from './Window';
-import {Buttons} from './Buttons';
+import React, {ChangeEvent, useEffect, useState} from 'react';
+import './App.css'
+
+import {SettingsWindow} from './SettingsWindow';
+import {ShowWindow} from './ShowWindow';
 
 
-type propsTypeCounter={
-    maxNumber:number
-    minNumber:number
+export function Counter() {
+    let [minNumber, setMinNumber] = useState()
+    let [maxNumber, setMaxNumber] = useState()
+    let [count, setCount] = useState()
 
-}
-export function Counter(props:propsTypeCounter) {
-    let [count, setCount] = useState(props.minNumber)
-    const increment = () => {
 
-        if (count === props.maxNumber)
+    useEffect(()=>{
+      let data= localStorage.getItem('startValue')
+        if(data){
+                setMinNumber(data)
+            }
+    },[]);
+
+    useEffect(()=>{
+        localStorage.setItem('startValue',minNumber)
+
+    },);
+
+  useEffect(()=>{
+      let dataMax=localStorage.getItem('valueMax')
+      if(dataMax){
+          setMaxNumber(dataMax)
+      }
+  },[])
+    useEffect(()=>{
+        localStorage.setItem('valueMax',maxNumber)
+    })
+
+
+
+    const onChangeMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setMaxNumber(e.currentTarget.value)
+    }
+    const onChangeMinValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setMinNumber(e.currentTarget.value)
+    }
+
+    const onclickIncHandler = () => {
+        if (maxNumber ==count)
             return
         count++
-        return (
-            setCount(count)
-        )
+        setCount(count)
     }
-    const reset = () => setCount(props.minNumber)
-    return (
-        <div className={'main'}>
-          <Window count={count} maxNumber={props.maxNumber}/>
-           <Buttons count={count} increment={increment} reset={reset} maxNumber={props.maxNumber} minNumber={props.minNumber}/>
-        </div>
+    const onclickSetHandler = () => {
 
+        setCount(minNumber)
 
-    )
+    }
+    const onclickResetHandler = () => {
+        setCount(minNumber)
+    }
+    return <div className={'wrapper'}>
+      <SettingsWindow maxNumber={maxNumber}
+                      minNumber={minNumber}
+                      onChangeMaxValueHandler={onChangeMaxValueHandler}
+                      onChangeMinValueHandler={onChangeMinValueHandler}
+                      onclickSetHandler={onclickSetHandler}
+                      count={count}/>
+       <ShowWindow minNumber={minNumber}
+                   maxNumber={maxNumber}
+                   count={count}
+                   onclickIncHandler={onclickIncHandler}
+                   onclickResetHandler={onclickResetHandler}/>
+    </div>
 }

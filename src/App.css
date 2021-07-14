@@ -1,67 +1,146 @@
-.wrapper{
-    border: black 2px solid;
-    height: 940px;
-    background-color: black;
+.wrapper {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    justify-items: center;
+    background-color:black;
+    background-size: cover;
+    height:100vh;
+
+
 }
-
-
 .main{
-   margin-left: auto;
-    margin-right: auto;
-   margin-top: 200px;
-    height: 350px;
+
+    margin-top: 200px;
+    height: 360px;
     width: 450px;
-    border: aqua 3px solid;
+    border: #68D5F6 3px solid;
     border-radius: 7px;
     background-color: black;
 }
-#count{
-margin-top: 20px;
+.count{
+display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width:410px ;
+    background-color: black;
+    border-radius: 7px;
+    border: aqua 3px solid;
+    font-weight: bold;
+
+
+}
+.test{
+    display:block;
+    margin-top: 50px;
+    text-align: center;
+    vertical-align: center;
+    font-size: 50px;
+    font-weight: bold;
+
+
+
+}
+
+.field{
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     text-align:center;
-    font-size: 140px;
     height: 200px;
     width:410px ;
-    background-color: aqua;
+    background-color: black;
     border-radius: 7px;
-    font-weight: bold;
+    border: #68D5F6 3px solid;
 
 }
-.buttons{
-    width:410px ;
-    height: 90px;
-    border: aqua 3px solid;
-    border-radius: 7px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-}
-#button_inc{
+.button_inc{
+
     width: 144px;
     height: 50px;
     margin-top: 20px;
     margin-left: 20px;
     font-size: 30px;
     border-radius: 7px;
-    background-color: aqua;
+    background-color: #68D5F6;
     font-weight: bold;
+    text-align: center;
 
 }
-#button_reset{
+.button_reset{
     width: 200px;
     height: 50px;
-    margin-top: 20px;
-    margin-left: 24px;
+    margin-top: -49px;
+    margin-left: 190px;
     font-size: 30px;
     border-radius: 7px;
-    background-color: aqua;
+    background-color: #68D5F6;
     font-weight:bold;
+    text-align: center;
+}
+.blockForButtons{
+    width:410px ;
+    height: 90px;
+    border: #68D5F6 3px solid;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.set{
+    width: 144px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    border-radius: 7px;
+    background-color:#68D5F6 ;
+    font-weight: bold;
+    text-align: center;
+}
+.blockMaxValue{
+    margin-top:20px ;
+
+}
+.maxValue{
+    margin-top: 20px;
+    width: 160px;
+    height: 30px;
+    border-radius: 7px;
+    border: #68D5F6 3px solid;
+    text-align: center;
+    font-size: 12px;
+    font-weight:bold;
+    margin-left: 40px;
+
+}
+.nameValue{
+    font-size: 30px;
+    font-weight:900;
+    color: #68D5F6;
+
+}
+.nameMinValue{
+
+    font-size: 30px;
+    font-weight:900;
+    margin-top: 40px;
+    color: #68D5F6;
+}
+.minValue{
+    margin-top: 50px;
+    width: 160px;
+    height: 30px;
+    border-radius: 7px;
+    border: #68D5F6 3px solid;
+    text-align: center;
+    font-size: 12px;
+    font-weight:bold;
+    margin-left: 40px;
 }
 .active{
-opacity: 0.3;
+    opacity: 0.3;
 }
-.countMax{
-   color:red;
-}
-
